@@ -1,12 +1,10 @@
 const skl = require('../events');
 const {MessageType,Mimetype} = require('@adiwajshing/baileys');
 const config = require('../config');
-const yts = require( 'yt-search' )
 const Language = require('../language');
 const Lang = Language.getString('scrapers');
 let sourav = config.WORKTYPE == 'public' ? false : true
-bot.addCommand(
-  { pattern: "doc ?(.*)", fromMe: true, desc: "convert to doc" },
+skl.addCommand({  pattern: "doc ?(.*)", fromMe: true, desc: "convert to doc" },
   async (message, match) => {
    if (!message.reply_message || !message.reply_message.mimetype)
       return await message.sendMessage("Reply to a media message")
